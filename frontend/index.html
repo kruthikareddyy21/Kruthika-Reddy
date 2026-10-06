@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TripMate AI | Smart Travel Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            ✈️ TripMate AI
+        </div>
+
+        <p>
+            Plan your perfect trip in seconds
+        </p>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>
+                Where do you want to go?
+            </h1>
+
+            <p>
+                Tell us a little about your trip and
+                we'll create a personalized travel plan for you.
+            </p>
+
+        </section>
+
+
+        <!-- PLANNING CARD -->
+        <section class="planning-card">
+
+            <h2>
+                🌍 Plan Your Trip
+            </h2>
+
+
+            <!-- DESTINATION -->
+            <div class="input-group">
+
+                <label for="destination">
+                    📍 Where are you going?
+                </label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="Example: Goa, Paris, Hyderabad"
+                >
+
+            </div>
+
+
+            <!-- DAYS + BUDGET -->
+            <div class="two-columns">
+
+                <div class="input-group">
+
+                    <label for="days">
+                        📅 How many days?
+                    </label>
+
+                    <input
+                        type="number"
+                        id="days"
+                        placeholder="Example: 3"
+                        min="1"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="budget">
+                        💰 Your budget (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="Example: 15000"
+                        min="1"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- TRAVEL TYPE -->
+            <div class="input-group">
+
+                <label>
+                    👥 Who are you travelling with?
+                </label>
+
+
+                <div class="travel-options">
+
+                    <button
+                        type="button"
+                        class="travel-option selected"
+                        onclick="selectTravelType('solo', this)"
+                    >
+                        🧍
+                        <span>Solo</span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="travel-option"
+                        onclick="selectTravelType('couple', this)"
+                    >
+                        👫
+                        <span>Couple</span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="travel-option"
+                        onclick="selectTravelType('family', this)"
+                    >
+                        👨‍👩‍👧
+                        <span>Family</span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="travel-option"
+                        onclick="selectTravelType('friends', this)"
+                    >
+                        🧑‍🤝‍🧑
+                        <span>Friends</span>
+                    </button>
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    id="travelType"
+                    value="solo"
+                >
+
+            </div>
+
+
+            <!-- INTERESTS -->
+            <div class="input-group">
+
+                <label for="interests">
+                    ❤️ What do you enjoy?
+                </label>
+
+
+                <input
+                    type="text"
+                    id="interests"
+                    placeholder="Example: beaches, food, shopping, adventure"
+                >
+
+
+                <small>
+                    You can mention multiple interests.
+                </small>
+
+            </div>
+
+
+            <!-- CREATE BUTTON -->
+            <button
+                type="button"
+                class="generate-button"
+                onclick="generatePlan()"
+            >
+                ✨ Create My Travel Plan
+            </button>
+
+        </section>
+
+
+        <!-- RESULT SECTION -->
+        <section
+            id="result"
+            class="result-card"
+        >
+
+            <div class="result-empty">
+
+                <div class="result-icon">
+                    🗺️
+                </div>
+
+                <h2>
+                    Your travel plan will appear here
+                </h2>
+
+                <p>
+                    Fill in your trip details above and let AI
+                    create your personalized itinerary.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Made with ❤️ using AI
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
